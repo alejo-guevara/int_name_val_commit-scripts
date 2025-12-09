@@ -50,7 +50,7 @@ system {
         commit-management {
             pre-commit-script "validate" {
                 admin-state enable
-                location cf3:/validate_fixed.py
+                location cf3:/pre.py
             }
             post-commit-script "post" {
                 admin-state enable
