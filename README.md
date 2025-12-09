@@ -111,7 +111,7 @@ Total non-compliant interfaces: 0
 
 ### Adding New Validation Rules
 
-Edit the validation script (`validate_fixed.py`) to add custom validation logic:
+Edit the validation script (`pre.py`) to add custom validation logic:
 
 ```python
 # Example: Add additional validation rules
@@ -133,7 +133,7 @@ allowed_prefixes = ["to_", "system", "loopback", "lo", "mgmt"]  # Add or remove 
 
 ## How It Works
 
-### Pre-Commit Script (`validate_fixed.py`)
+### Pre-Commit Script (`pre.py`)
 
 1. **Connects** to the local SR OS device using `connect(use_existing_candidate=True)`
 2. **Retrieves** all interfaces from the candidate configuration
