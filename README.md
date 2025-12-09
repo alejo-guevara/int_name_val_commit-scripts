@@ -43,24 +43,16 @@ scp post.py admin@<router-ip>:/cf3/
 SSH into your SR OS device and configure the pre-commit and post-commit scripts:
 
 ```
-/configure
+/configure python python-script "post-script" admin-state enable
+/configure python python-script "post-script" urls ["cf3:/post.py"]
+/configure python python-script "post-script" version python3
+/configure python python-script "pre-script" admin-state enable
+/configure python python-script "pre-script" urls ["cf3:/pre.py"]
+/configure python python-script "pre-script" version python3
+/configure system management-interface commit-management python-scripts pre-commit-python-script "pre-script"
+/configure system management-interface commit-management python-scripts post-commit-python-script "post-script"
 
-system {
-    management-interface {
-        commit-management {
-            pre-commit-script "validate" {
-                admin-state enable
-                location cf3:/pre.py
-            }
-            post-commit-script "post" {
-                admin-state enable
-                location cf3:/post.py
-            }
-        }
-    }
-}
 
-commit
 ```
 
 ## Usage
