@@ -34,7 +34,7 @@ This project provides a framework for validating SR OS configurations against cu
 Copy the validation scripts to your SR OS device:
 
 ```bash
-scp validate_fixed.py admin@<router-ip>:/cf3/
+scp pre.py admin@<router-ip>:/cf3/
 scp post.py admin@<router-ip>:/cf3/
 ```
 
